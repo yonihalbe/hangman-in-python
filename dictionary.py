@@ -24,11 +24,11 @@ def startgame(word):
     gotword = "no"
     #the number of geos user gets - length of word + 5
     goes = len(word) + 5
-    print("you have ", goes, "attempts to guess the word")
+    print("you have ", goes, "attempts to guess the word \n")
     sofar = []
     for i in word:
         sofar.append("-")
-    print (sofar)
+    print (sofar, "\n")
 
 
     # lets the user guess until they run out of goes
@@ -36,10 +36,10 @@ def startgame(word):
     while b < goes:
         #checks if they have guessed the word by seeing if any dashes left in the
         if "-" not in sofar:
-            print("well done you have guessed the word")
+            print("well done you have guessed the word\n")
             gotword = "yes"
             break
-        guess = input("guess a letter in the word: ")
+        guess = input("guess a letter in the word: \n")
         a= 0
         success = "n"
         #uses a for loop to go thru each letter in the word to see if it matches
@@ -57,7 +57,7 @@ def startgame(word):
             print("sorry that letter is not in the word pls guess again")
 
         #displays word so far
-        print (sofar)
+        print (sofar, "\n")
 
         #for go counter
         b = b+1
@@ -77,7 +77,7 @@ def wantplay():
     elif choice.lower() == "no":
         print ("ok see you next time")
     else:
-        print("please enter a valid response")
+        print("please enter a valid response \n")
         wantplay()
 
 wantplay()
