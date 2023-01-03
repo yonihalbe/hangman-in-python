@@ -7,9 +7,9 @@ words= file.readlines()
 
 #function to generate a random word
 def randomword():
-    word =""
-    #makes sure the length of the word is not more than 10 letters
-    while len(word) < 10:
+    word ="aaaaaaaaaa"
+    #makes sure the length of the word is not more than 8 letters
+    while len(word) > 8:
         word = words[random.randint(0,len(words))]
     #picks a random word from the list
     word = word.replace("""
