@@ -33,12 +33,16 @@ def startgame(word):
 
     # lets the user guess until they run out of goes
     b = 0
-    while b < goes:
+    while b <= goes:
         #checks if they have guessed the word by seeing if any dashes left in the
         if "-" not in sofar:
             print("well done you have guessed the word\n")
-            gotword = "yes"
             break
+        if b == goes:
+            print("sorry u didnt get the word")
+            print("the word was ", word , "\n")
+            break
+        print('this is your',b,'/',goes,' go')
         guess = input("guess a letter in the word: \n")
         a= 0
         success = "n"
@@ -61,7 +65,7 @@ def startgame(word):
 
         #for go counter
         b = b+1
-    return gotword
+    
     
 
 #function to check if user wants to play
@@ -69,10 +73,7 @@ def wantplay():
     choice = input("do you want to play hangman: (yes/no) ")
     if choice.lower() == "yes":
         word = randomword()
-        gotword = startgame(word)
-        if gotword == "no":
-            print("sorry u didnt get the word")
-            print("the word was ", word , "\n")
+        startgame(word)
         wantplay()
     elif choice.lower() == "no":
         print ("ok see you next time")
